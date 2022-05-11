@@ -13,28 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="container" style="max-width:100vw">
-        <nav class="guerreiros navbar navbar-expand-sm fixed-top">
-            <div class="container">
-                <a  id="brand" class="navbar-brand text-light" href="{% url 'mainpage:index' %}">Guerreiros do amanhã</a>
-                <ul class="navbar-nav btn btn-toolbar">
-                    <li class="navbar-item btn btn-group">
-                        <a class="btn btn-outline-light nav-link" href="{% url 'mainpage:index' %}">Diário de Jornada</a>
-                    </li>
-                    <li class="navbar-item btn btn-group">
-                        <a class="btn nav-link btn-outline-light" href="{% url 'mainpage:inventory' %}">Inventário</a>
-                    </li>
-                    <li class="dropdown navbar-item btn btn-group">
-                        <a class="btn btn-outline-light dropdown-toggle nav-link" href="" data-toggle="dropdown">Integrantes</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href=""><i class="fa-solid fa-bow-arrow pr-2"></i>Elaria</a>
-                            <a class="dropdown-item" href="">Dovahkin</a>
-                            <a class="dropdown-item" href="">Rato Imundo</a>
-                            <a class="dropdown-item" href="">Tirob</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    {% include 'navbar.html' %}
 <div class="container">
     {% block content %}
     {% endblock %}

@@ -1,0 +1,83 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'mainpage/style.css' %}">
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Guerreiros do Amanhã</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="container" style="max-width:100vw">
+        <nav class="guerreiros navbar navbar-expand-sm fixed-top">
+            <div class="container">
+                <a  id="brand" class="navbar-brand text-light" href="{% url 'mainpage:index' %}">Guerreiros do amanhã</a>
+                <ul class="navbar-nav btn btn-toolbar">
+                    <li class="navbar-item btn btn-group">
+                        <a class="btn btn-outline-light nav-link" href="main.html">Diário de Jornada</a>
+                    </li>
+                    <li class="navbar-item btn btn-group">
+                        <a class="btn nav-link btn-outline-light" href="inventory.html">Inventário</a>
+                    </li>
+                    <li class="dropdown navbar-item btn btn-group">
+                        <a class="btn btn-outline-light dropdown-toggle nav-link" href="" data-toggle="dropdown">Integrantes</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href=""><i class="fa-solid fa-bow-arrow pr-2"></i>Elaria</a>
+                            <a class="dropdown-item" href="">Dovahkin</a>
+                            <a class="dropdown-item" href="">Rato Imundo</a>
+                            <a class="dropdown-item" href="">Tirob</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="main-menu" class="container">
+            <div class="card-deck">
+                <div class="card">
+                    <img class="card-img" src="/static/mainpage/journal-card.webp" alt="">
+                    <div class="card-body text-light">
+                        <h4 class="card-title">A história até agora...</h4>
+                        <p class="card-text">Saiba mais um pouco sobre a aventura dos Guerreiros do amanhã!</p>
+                        <a class="btn btn-outline-light" href="">Descubra.</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" style="height:295px;" src="/static/mainpage/otari.jpg" alt="">
+                    <div class="card-body text-light">
+                        <h4 class="card-title">Lugares visitados</h4>
+                        <p class="card-text">Conheça os lugares que nossos heróis conheceram em sua jornada!</p>
+                        <a class="btn btn-outline-light" href="">Imagine.</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="/static/mainpage/card-image03.webp" alt="">
+                    <div class="card-body text-light">
+                        <h4 class="card-title">Pessoas conhecidas</h4>
+                        <p class="card-text">Descubra quem são os diversos personagens da aventura!</p>
+                        <a class="btn btn-outline-light" href="">Conheça.</a>
+                    </div>
+                </div>
+                <div class="container pt-4">
+                    <div class="jumbotron jumbotron-fluid rounded text-center text-light">
+                        <div id="jumbotron-center" class="container rounded pt-4 pb-4">
+                            <h1 class="display 4">Livros e mais!</h1>
+                            <a href="https://drive.google.com/drive/folders/1wBrwZLbBx1DLsgCs-HW-MciaEFhDiYMe?usp=sharing" target="_blank" class="lead btn btn-outline-light">Acesse aqui para baixar os conteúdos desta aventura!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+</body>
+</html>

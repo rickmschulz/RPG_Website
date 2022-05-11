@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+@font-face {
+    font-family: 'guerreiros';
+    src: url('Dalek.ttf') format('truetype');
+}
+
+
+
+#brand {
+    font-family: 'Righteous', cursive;
+}
+
+.guerreiros {
+    background-image: url('resume-bg.jpg');
+    font-family: 'guerreiros';
+    font-size: 53rem;
+    border: 20px solid black;
+    border-image: url('main-border-sm.png') 20% repeat;
+    border-image-width: auto;
+    box-shadow: 0 0 20px 0 black;
+}
+
+body {
+    height: 100vh;
+    background-image: url('bg-guerreiros.webp');
+    background-size: cover;
+}
+
+#main-menu {
+    height: 100%;
+    padding-top: 200px;
+    background-color: rgba(7, 7, 7, 0.288);
+    box-shadow:0 0 10px 0 black;
+}
+
+.card {
+    background-color:rgba(7, 7, 7, 0.363);
+    box-shadow:0 0 10px 0 black;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 2.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.jumbotron {
+    background-image: url('jumbotron-img.png');
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.171);
+    box-shadow: 0 0 20px 0 black;
+}
+#jumbotron-center {
+    background-color:rgba(7, 7, 7, 0.363);
+    width:50%;
+}
+.container {
+    height:100%;
+}
+
+#inventory-menu {
+    height: 100%;
+    padding-top: 960px;
+    background-color: rgba(7, 7, 7, 0.288);
+    box-shadow:0 0 10px 0 black;
+}
+.card-img {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    border-bottom:0px;
+}
+
+.dropdown-item {
+    padding: 0.25rem 2.5rem;
+}

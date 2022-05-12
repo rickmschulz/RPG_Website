@@ -3,5 +3,12 @@
 
 
 {% block content %}
-<p1>Inventario</p1>
+<div id="main-menu" class="container">
+
+    <form action="." method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+
+<div>
 {% endblock %}

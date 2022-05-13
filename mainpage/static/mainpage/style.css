@@ -4,29 +4,37 @@
 
 @font-face {
     font-family: 'guerreiros';
-    src: url('Dalek.ttf') format('truetype');
+    src: url('fonts/Dalek.ttf') format('truetype');
 }
 
-
+html {
+    background-color: rgba(0, 0, 0, 0);
+}
+body {
+    background-color: rgba(0, 0, 0, 0);
+    height: 100vh;
+    background-image: url('img/bg-guerreiros.webp');
+    background-size: cover;
+}
 
 #brand {
     font-family: 'Righteous', cursive;
 }
 
 .guerreiros {
-    background-image: url('resume-bg.jpg');
+    background-image: url('img/resume-bg.jpg');
     font-family: 'guerreiros';
     font-size: 53rem;
     border: 20px solid black;
-    border-image: url('main-border-sm.png') 20% repeat;
+    border-image: url('img/main-border-sm.png') 20% repeat;
     border-image-width: auto;
     box-shadow: 0 0 20px 0 black;
 }
 
-body {
-    height: 100vh;
-    background-image: url('bg-guerreiros.webp');
-    background-size: cover;
+.fefe {
+    background-color: rgba(0, 0, 0, 0.445);
+    height: 80px;
+    width: 120px;
 }
 
 #main-menu {
@@ -52,7 +60,7 @@ body {
 }
 
 .jumbotron {
-    background-image: url('jumbotron-img.png');
+    background-image: url('img/jumbotron-img.png');
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.171);
     box-shadow: 0 0 20px 0 black;
@@ -79,4 +87,8 @@ body {
 
 .dropdown-item {
     padding: 0.25rem 2.5rem;
+}
+.img-badges {
+    width:30px;
+    height:30px;
 }

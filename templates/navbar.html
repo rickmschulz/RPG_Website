@@ -1,20 +1,30 @@
+{% load static %}
+
 <nav class="guerreiros navbar navbar-expand-sm fixed-top">
+    <iframe class="fefe navbar-item" style="border-radius:12px"
+            src=""
+            width="100%" height="380" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     <div class="container">
         <a id="brand" class="navbar-brand text-light" href="{% url 'mainpage:index' %}">Guerreiros do amanhã</a>
         <ul class="navbar-nav btn btn-toolbar">
             <li class="navbar-item btn btn-group">
-                <a class="btn btn-outline-light nav-link" href="{% url 'mainpage:index' %}">Diário de Jornada</a>
+                <a class="btn btn-outline-light {% if request.path == '/' %} nav-link active {% endif %}" href="{% url 'mainpage:index' %}">Diário de Jornada</a>
             </li>
             <li class="navbar-item btn btn-group">
-                <a class="btn nav-link btn-outline-light" href="{% url 'mainpage:inventory' %}">Inventário</a>
+            <a class="btn nav-link btn-outline-light {% if request.path == '/inventory/' %} nav-link active {% endif %}" href="{% url 'mainpage:inventory' %}">Inventário</a>
             </li>
             <li class="dropdown navbar-item btn btn-group">
                 <a class="btn btn-outline-light dropdown-toggle nav-link" href="" data-toggle="dropdown">Integrantes</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href=""><i class="fa-solid fa-bow-arrow pr-2"></i>Elaria</a>
-                    <a class="dropdown-item" href="">Dovahkin</a>
-                    <a class="dropdown-item" href="">Rato Imundo</a>
-                    <a class="dropdown-item" href="">Tirob</a>
+                    <a class="dropdown-item" href=""><img class="img-badges" src="{% static 'mainpage/badges/ellaria-badge.png' %}"
+                                                          alt=""><span class="pl-4"></span> Elaria</a>
+                    <a class="dropdown-item" href=""><img class="img-badges" src="{% static 'mainpage/badges/dovahkin-badge.png' %}"
+                                                          alt=""><span class="pl-4"></span> Dovahkin</a>
+                    <a class="dropdown-item" href=""><img class="img-badges" src="{% static 'mainpage/badges/rato-imundo-badge.png' %}"
+                                                          alt=""><span class="pl-4"></span> Rato Imundo</a>
+                    <a class="dropdown-item" href=""><img class="img-badges" src="{% static 'mainpage/badges/tirob-badge.png' %}" alt=""><span
+                            class="pl-4"></span> Tirob</a>
                 </div>
             </li>
         </ul>

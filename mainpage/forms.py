@@ -3,9 +3,9 @@ from django import forms
 from .models import Inventory
 
 class RawInventoryForm(forms.Form):
-    EQUIPMENTS = 'EQ'
-    POTIONS = 'POT'
-    ITEMS = 'IT'
+    EQUIPMENTS = 'EQUIPMENTS'
+    POTIONS = 'POTIONS'
+    ITEMS = 'ITEMS'
     item_choices = [
         (EQUIPMENTS, 'Equipamentos'),
         (POTIONS, 'Poções'),

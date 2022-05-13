@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import RawInventoryForm
+from .forms import InventoryForm
 from .models import Inventory
 
 # Create your views here.
@@ -7,16 +7,15 @@ def index(request):
     return render(request, 'index.html')
 
 def inventory(request):
-    my_form = RawInventoryForm()
-    if request.method == 'POST':
-        my_form = RawInventoryForm(request.POST)
-        if my_form.is_valid():
-            # now the data is good
-            print(my_form.cleaned_data)
-            Inventory.objects.create(**my_form.cleaned_data)
-        else:
-            print(my_form.errors)
+    initial_data = {
+        'description': 'This is my awesome item!'
+    }
+    form = InventoryForm(request.POST or None, initial=initial_data)
+    if form.is_valid():
+        form.save()
+        form = InventoryForm
+
     context = {
-        'form': my_form
+        'form': form
     }
     return render(request, 'inventory.html', context)

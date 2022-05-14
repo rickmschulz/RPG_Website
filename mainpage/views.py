@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import InventoryForm
-from .models import Inventory
+
 
 # Create your views here.
 def index(request):

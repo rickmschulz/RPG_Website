@@ -1,3 +1,3 @@
 # RPG_Website
 
-Projeto para efeitos didáticos.
+Django Website Project para efeitos didáticos.

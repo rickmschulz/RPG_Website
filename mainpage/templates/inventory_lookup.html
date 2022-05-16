@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div id="main-menu" class="container">
+
+<h1>{{ object.item_type }}</h1>
+<p>{{ object.description }}</p>
+<p>{{ object.quantity }}</p>
+
+</div>
+{% endblock %}

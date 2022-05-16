@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div id="main-menu" class="container">
+
+{% for instance in object_list %}
+
+    <p>{{ instance.item_type }} - <a href="{{ instance.get_absolute_url }}">{{ instance.description }}</a> - {{ instance.quantity }}</p>
+
+{% endfor %}
+
+</div>
+{% endblock %}

@@ -14,7 +14,7 @@ def inventory(request):
     form = InventoryForm(request.POST or None, initial=initial_data)
     if form.is_valid():
         form.save()
-        form = InventoryForm
+        form = InventoryForm(initial=initial_data)
 
     context = {
         'form': form

@@ -1,17 +1,9 @@
 from django import forms
-
 from .models import Inventory
 
+
 class InventoryForm(forms.ModelForm):
-    EQUIPMENTS = 'EQUIPMENTS'
-    POTIONS = 'POTIONS'
-    ITEMS = 'ITEMS'
-    item_choices = [
-        (EQUIPMENTS, 'Equipamentos'),
-        (POTIONS, 'Poções'),
-        (ITEMS, 'Items')
-    ]
-    # overriding form fields
+    # overriding using form fields
     description = forms.CharField(required=False,
                                   widget=forms.Textarea(
                                       attrs={
@@ -19,8 +11,8 @@ class InventoryForm(forms.ModelForm):
                                           'placeholder': 'Your description of the item',
                                           'class': 'new-class-name two',
                                           'id': 'my-id-for-textarea',
-                                          'rows': 10,
-                                          'cols': 80
+                                          'rows': 6,
+                                          'cols': 60
                                       }
                                   ))
     quantity = forms.IntegerField()
@@ -38,7 +30,6 @@ class InventoryForm(forms.ModelForm):
     #     if 'TESTE' not in description:
     #         raise forms.ValidationError('This is not a valid description!')
     #     return description
-
 
 # 1 - equipamento
 #  1.1 - armas

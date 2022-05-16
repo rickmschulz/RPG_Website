@@ -3,15 +3,32 @@ from django.urls import reverse
 
 # Create your models here.
 class Inventory(models.Model):
-    EQUIPMENTS = 'EQUIPMENTS'
-    POTIONS = 'POTIONS'
-    ITEMS = 'ITEMS'
     item_choices = [
-        (EQUIPMENTS, 'Equipamentos'),
-        (POTIONS, 'Poções'),
-        (ITEMS, 'Items')
+        ('Armas', (
+            ('melee', 'Melee'),
+            ('ranged', 'Ranged')
+        )),
+        ('Armaduras', (
+            ('helmet', 'Helmet'),
+            ('body armor', 'Body Armor'),
+        )),
+        ('Acessórios', (
+            ('amuletos', 'Amuletos'),
+            ('anéis', 'Anéis'),
+            ('capas', 'Capas'),
+            ('braceletes', 'Braceletes'),
+            ('botas', 'Botas')
+        )),
+        ('Consumíveis', (
+            ('poções', 'Poções'),
+            ('scrolls', 'Scrolls'),
+            ('varinhas', 'Varinhas'),
+        )),
+        ('Outros', (
+            ('input livre', 'Input Livre'),
+        ))
     ]
-    item_type = models.CharField(max_length=10, choices=item_choices, blank=True)
+    item_type = models.CharField(max_length=20, choices=item_choices, blank=False)
     description = models.CharField(max_length=300, blank=True)
     quantity = models.IntegerField()
 

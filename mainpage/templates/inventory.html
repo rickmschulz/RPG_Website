@@ -5,6 +5,8 @@
 {% block content %}
 <div id="main-menu" class="container">
 
+    <h1><a href="{% url 'mainpage:inventory-list' %}">Check Inventory Database Here</a></h1>
+
     <form action="." method="POST">{% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Save">

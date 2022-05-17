@@ -7,6 +7,7 @@ from .models import Inventory
 def index(request):
     return render(request, 'index.html')
 
+
 def inventory(request):
     initial_data = {
         'description': 'This is my awesome item!'
@@ -21,12 +22,26 @@ def inventory(request):
     }
     return render(request, 'inventory.html', context)
 
+
+def inventory_update_view(request, id=id):
+    obj = get_object_or_404(Inventory, id=id)
+    form = InventoryForm(request.POST or None, instance=obj)
+    if form.is_valid():
+        form.save()
+
+    context = {
+        'form': form
+    }
+    return render(request, 'inventory.html', context)
+
+
 def inventory_list_view(request):
-    queryset = Inventory.objects.all() # list of objects
+    queryset = Inventory.objects.all()  # list of objects
     context = {
         "object_list": queryset
     }
     return render(request, 'inventory_list.html', context)
+
 
 def inventory_lookup_view(request, id):
     # obj = Inventory.objects.get(id=id)
@@ -36,6 +51,7 @@ def inventory_lookup_view(request, id):
         "object": obj
     }
     return render(request, 'inventory_lookup.html', context)
+
 
 def delete_view(request, id):
     # obj = Inventory.objects.get(id=id)

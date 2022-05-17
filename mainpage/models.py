@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 # Create your models here.
 class Inventory(models.Model):
     item_choices = [
@@ -15,9 +16,9 @@ class Inventory(models.Model):
         ('Acessórios', (
             ('Amuletos', 'Amuletos'),
             ('Anéis', 'Anéis'),
-            ('Capas', 'Capas'),
+            ('Botas', 'Botas'),
             ('Braceletes', 'Braceletes'),
-            ('Botas', 'Botas')
+            ('Capas', 'Capas')
         )),
         ('Consumíveis', (
             ('Poções', 'Poções'),
@@ -35,4 +36,8 @@ class Inventory(models.Model):
     # another method for absolute url
     def get_absolute_url(self):
         return reverse('mainpage:inventory-lookup', kwargs={"id": self.id})    # hardcoded method f"/inventory/{self.id}/"
+
+    # # Overriding Ordering QuerySets
+    # class Meta:
+    #     ordering = ['item_type']
 

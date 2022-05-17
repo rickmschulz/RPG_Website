@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import InventoryForm
 from .models import Inventory
+from django.urls import reverse
 
 
 # Create your views here.
@@ -14,8 +15,8 @@ def inventory(request):
     }
     form = InventoryForm(request.POST or None, initial=initial_data)
     if form.is_valid():
-        form.save()
-        form = InventoryForm(initial=initial_data)
+        form.save(commit=True)
+        return redirect(reverse('mainpage:inventory-lookup', kwargs={"id": form.instance.id}))
 
     context = {
         'form': form
@@ -36,7 +37,12 @@ def inventory_update_view(request, id=id):
 
 
 def inventory_list_view(request):
-    queryset = Inventory.objects.all()  # list of objects
+    # filter_groups = ['Melee', 'Ranged', 'Helmet', 'Body Armor', 'Amuletos', 'Anéis', 'Botas', 'Braceletes', 'Capas',
+    #                  'Poções', 'Scrolls', 'Varinhas']
+
+    # queryset = Inventory.objects.all()
+    queryset = Inventory.objects.all().order_by('item_type')
+
     context = {
         "object_list": queryset
     }

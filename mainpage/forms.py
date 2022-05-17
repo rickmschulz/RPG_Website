@@ -1,5 +1,6 @@
 from django import forms
 from .models import Inventory
+from django.urls import reverse
 
 
 class InventoryForm(forms.ModelForm):
@@ -24,12 +25,16 @@ class InventoryForm(forms.ModelForm):
             'description',
             'quantity'
         ]
-    # Validation forms
+
+
+    # # Validation forms
     # def clean_description(self, *args, **kwargs):
     #     description = self.cleaned_data.get('description')
     #     if 'TESTE' not in description:
     #         raise forms.ValidationError('This is not a valid description!')
     #     return description
+
+
 
 # 1 - equipamento
 #  1.1 - armas

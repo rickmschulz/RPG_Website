@@ -5,27 +5,27 @@ from django.urls import reverse
 class Inventory(models.Model):
     item_choices = [
         ('Armas', (
-            ('melee', 'Melee'),
-            ('ranged', 'Ranged')
+            ('Melee', 'Melee'),
+            ('Ranged', 'Ranged')
         )),
         ('Armaduras', (
-            ('helmet', 'Helmet'),
-            ('body armor', 'Body Armor'),
+            ('Helmet', 'Helmet'),
+            ('Body Armor', 'Body Armor'),
         )),
         ('Acessórios', (
-            ('amuletos', 'Amuletos'),
-            ('anéis', 'Anéis'),
-            ('capas', 'Capas'),
-            ('braceletes', 'Braceletes'),
-            ('botas', 'Botas')
+            ('Amuletos', 'Amuletos'),
+            ('Anéis', 'Anéis'),
+            ('Capas', 'Capas'),
+            ('Braceletes', 'Braceletes'),
+            ('Botas', 'Botas')
         )),
         ('Consumíveis', (
-            ('poções', 'Poções'),
-            ('scrolls', 'Scrolls'),
-            ('varinhas', 'Varinhas'),
+            ('Poções', 'Poções'),
+            ('Scrolls', 'Scrolls'),
+            ('Varinhas', 'Varinhas'),
         )),
         ('Outros', (
-            ('input livre', 'Input Livre'),
+            ('Input Livre', 'Input Livre'),
         ))
     ]
     item_type = models.CharField(max_length=20, choices=item_choices, blank=False)
